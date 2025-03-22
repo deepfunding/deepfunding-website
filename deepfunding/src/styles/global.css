@@ -442,7 +442,8 @@
     }
   } 
 
-/* Feature Image Section Styles */
+/* Feature Image Section Styles - Keeping for reference but no longer used directly */
+/*
 .feature-image {
   background-color: #d9d5c5;
   padding: 80px 30px;
@@ -494,7 +495,6 @@
   font-weight: 700;
 }
 
-/* Override for feature image section to use Offside font */
 .featureimagetext .heading-6 {
   font-family: Offside, Verdana, sans-serif;
 }
@@ -505,4 +505,5 @@
 
 .yellowtext {
   color: #f5ff67;
-} 
+}
+*/ 
