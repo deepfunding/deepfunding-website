@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="DeepFunding - A Modern Web Application" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <header class="border-b">
+        <div class="container mx-auto px-4 py-4">
+          <nav class="flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">DeepFunding</a>
+            <div class="flex gap-6">
+              <a href="/" class="hover:text-primary transition-colors">Home</a>
+              <a href="/faq" class="hover:text-primary transition-colors">FAQ</a
+              >
+              <a href="/resources" class="hover:text-primary transition-colors"
+                >Resources</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <footer class="border-t py-8 mt-12">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} DeepFunding. All rights reserved.
+            </p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >Terms</a
+              >
+              <a
+                href="#"
+                class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >Privacy</a
+              >
+              <a
+                href="#"
+                class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>
+
