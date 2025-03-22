@@ -1,5 +1,6 @@
 ---
 import Hamburger from "./Hamburger.jsx";
+import Button from "./Button.jsx";
 
 // Interface for navigation items
 interface NavItem {
@@ -52,9 +53,9 @@ const rightNavItems: NavItem[] = [
         {
           rightNavItems.map((item) =>
             item.isButton ? (
-              <a href={item.href} class="telegram-button">
+              <Button href={item.href} client:load>
                 {item.text}
-              </a>
+              </Button>
             ) : (
               <a href={item.href} class="nav-link">
                 {item.text}
@@ -81,9 +82,9 @@ const rightNavItems: NavItem[] = [
           [...navItems, ...rightNavItems].map((item, index) => (
             <li>
               {item.isButton ? (
-                <a href={item.href} class="telegram-button">
+                <Button href={item.href} client:load>
                   {item.text}
-                </a>
+                </Button>
               ) : (
                 <a href={item.href} class="nav-link">
                   {item.text}
@@ -100,9 +101,5 @@ const rightNavItems: NavItem[] = [
 <style>
   .nav-link {
     @apply text-sm text-cream py-[5px] px-[10px] hover:text-white font-offside;
-  }
-
-  .telegram-button {
-    @apply bg-cream text-green-light px-[25px] py-3 uppercase text-xs !tracking-[2px] leading-[20px] font-offside hover:bg-[#32343a] hover:text-[#d9d5c5];
   }
 </style>

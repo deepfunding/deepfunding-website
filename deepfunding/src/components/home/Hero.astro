@@ -1,41 +1,43 @@
 ---
 // Hero.astro
+import Button from "../Button.jsx";
 ---
 
 <section
-  class="flex items-center gradient-bg hero-container overflow-hidden text-white"
+  class="flex items-start gradient-bg hero-container overflow-hidden text-white"
 >
-  <div class="container mx-auto">
-    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-      <div class="w-full md:w-1/2 space-y-6 md:space-y-8">
-        <h1 class="h1-hero">
-          SCALING HIGH QUALITY<br />HUMAN JUDGEMENT
-        </h1>
-        <p class="margin-bottom-24px max-w-2xl">
-          A decentralized mechanism to identify and fund the most impactful
-          public goods across the decentralized graph.
-        </p>
-        <div class="section flex flex-wrap gap-4">
-          <a
-            href="https://cryptopond.xyz/modelfactory/detail/2564617"
-            target="_blank"
-            class="button-primary">TAKE ON THE CHALLENGE</a
-          >
-          <a
-            href="https://research.allo.capital/t/nominations-for-child-node-voting-jurors-deep-funding-mechanism/99"
-            target="_blank"
-            class="button-primary">JOIN THE JURY</a
-          >
-        </div>
+  <div class="container flex flex-col md:flex-row items-center gap-8 md:gap-0">
+    <div class="w-full md:w-1/2 space-y-6 md:space-y-8">
+      <h1 class="h1-hero mt-5 mb-3">
+        SCALING HIGH QUALITY<br />HUMAN JUDGEMENT
+      </h1>
+      <p class="text-cream text-sm mb-6 !mt-0">
+        Driving rewards to open source repos with a market of AIs as the engine
+        and humans as the steering wheel.
+      </p>
+      <div class="section flex flex-wrap gap-4">
+        <Button
+          href="https://cryptopond.xyz/modelfactory/detail/2564617"
+          target="_blank"
+          client:load
+        >
+          TAKE ON THE CHALLENGE
+        </Button>
+        <Button
+          href="https://research.allo.capital/t/nominations-for-child-node-voting-jurors-deep-funding-mechanism/99"
+          target="_blank"
+          client:load
+        >
+          JOIN THE JURY
+        </Button>
       </div>
-      <div class="w-full md:w-1/2 flex justify-center py-4 md:py-0">
-        <img
-          src="/images/tree-with-roots.svg"
-          alt="Tree with roots"
-          class="h-auto w-auto object-contain"
-        />
-      </div>
+    </div>
+    <div class="w-full md:w-1/2 flex justify-center py-4 md:py-0">
+      <img
+        src="/images/tree-with-roots.svg"
+        alt="Tree with roots"
+        class="h-auto w-auto object-contain"
+      />
     </div>
   </div>
 </section>
-

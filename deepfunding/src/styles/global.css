@@ -58,7 +58,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-offside;
+  }
+  p {
+    @apply mt-0;
   }
 } 
 
@@ -207,7 +210,6 @@
 
 .margin-bottom-24px {
   color: #d9d5c5;
-  margin-bottom: 24px;
   font-family: Offside, Verdana, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -267,15 +269,10 @@
 }
 
 .container {
-  flex-flow: column;
-  flex: 1;
-  order: 0;
-  align-self: center;
   width: 100%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
 }
 
 .section-2 {
