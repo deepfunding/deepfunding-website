@@ -2,21 +2,62 @@
 // CTA.astro - Call to Action section
 ---
 
-<section class="py-16">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-      <p class="text-lg text-muted-foreground mb-8">
-        Join thousands of innovators and backers on our platform to bring your
-        ideas to life.
-      </p>
-      <a
-        href="#"
-        class="bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity inline-block"
-      >
-        Sign Up Now
-      </a>
-    </div>
+<section class="cta">
+  <div class="container-4 flex justify-center">
+    <a href="https://t.me/AgentAllocators/1" class="w-inline-block">
+      <h2 class="centered-heading-3 collaboratorsheading ctatext !text-[64px]">
+        JOIN US ON TELEGRAM
+      </h2>
+    </a>
   </div>
 </section>
 
+<style>
+  .cta {
+    background-image: linear-gradient(#f5ff67, #f5ff67);
+    border-bottom: 1px solid #e4ebf3;
+    padding: 40px 30px;
+    position: relative;
+  }
+
+  .container-4 {
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .link-block-3 {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  .centered-heading-3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .collaboratorsheading {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .ctatext {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+
+  .ctatext:hover {
+    color: #333;
+  }
+</style>
