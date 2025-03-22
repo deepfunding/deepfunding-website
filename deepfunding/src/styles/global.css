@@ -139,3 +139,108 @@
   background: radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
 } 
+
+/* How Does It Work Section Styles */
+.howdoesitwork {
+  background-image: linear-gradient(#17301c, #d9d5c5);
+  border-bottom: 1px solid #e4ebf3;
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 30px;
+  display: flex;
+  position: relative;
+}
+
+.container {
+  flex-flow: column;
+  flex: 1;
+  order: 0;
+  align-self: center;
+  width: 100%;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.section-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.centered-heading {
+  color: #d9d5c5;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+.howdoesitwork-description {
+  color: #333;
+  text-align: left;
+  max-width: 550px;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: Offside, Verdana, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.howdoesitwork-grid {
+  display: grid;
+  margin-top: 40px;
+  width: 100%;
+  grid-gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .howdoesitwork-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 64px;
+    grid-row-gap: 50px;
+  }
+}
+
+.component-card {
+  outline-offset: 0px;
+  text-align: left;
+  background-color: #d9d5c5;
+  border: 2px solid #f5ff67;
+  outline: 2px #f5ff67;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: 'Public Sans', Verdana, sans-serif;
+  display: flex;
+  transition: transform 0.3s ease;
+  height: 100%;
+  margin: 0;
+}
+
+.component-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-image {
+  margin-bottom: 1rem;
+}
+
+.cards {
+  color: #17301c;
+  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.pricing-card-text {
+  font-family: Offside, Verdana, sans-serif;
+  color: #666;
+} 
