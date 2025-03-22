@@ -87,6 +87,19 @@
   .gradient-cream {
     @apply bg-gradient-to-b from-green to-cream;
   }
+  
+  /* Video section styling */
+  .video-container {
+    @apply w-full max-w-[940px] mx-auto;
+  }
+  
+  .video-wrapper {
+    @apply flex flex-col items-start justify-start max-w-[750px] mx-auto text-center;
+  }
+  
+  .responsive-video {
+    @apply w-full relative;
+  }
 }
 
 /* Custom utility classes */
