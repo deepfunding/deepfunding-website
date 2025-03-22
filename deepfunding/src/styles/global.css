@@ -62,6 +62,33 @@
   }
 } 
 
+@layer components {
+  /* Common components styling */
+  .section-container {
+    @apply w-full max-w-[940px] mx-auto;
+  }
+  
+  .heading-stencil {
+    @apply font-stencil font-bold;
+  }
+  
+  .heading-offside {
+    @apply font-offside font-bold;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .gradient-green {
+    @apply bg-gradient-to-b from-green-medium to-green;
+  }
+  
+  .gradient-cream {
+    @apply bg-gradient-to-b from-green to-cream;
+  }
+}
+
 /* Custom utility classes */
 .text-deep-green {
   color: hsl(var(--deep-green));
@@ -441,69 +468,3 @@
       font-size: 1rem;
     }
   } 
-
-/* Feature Image Section Styles - Keeping for reference but no longer used directly */
-/*
-.feature-image {
-  background-color: #d9d5c5;
-  padding: 80px 30px;
-  position: relative;
-  border: 2px solid #f5ff67;
-}
-
-.container-3 {
-  width: 100%;
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.feature-image-2 {
-  text-align: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-
-.feature-img {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.featureimagetext {
-  color: #3f4c51;
-  text-align: left;
-  -webkit-text-stroke-color: #f5ff67;
-  max-width: none;
-  padding-left: 0;
-  font-family: Offside, Verdana, sans-serif;
-  font-size: 1rem;
-  line-height: 1rem;
-}
-
-.heading-6 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  font-weight: 700;
-}
-
-.featureimagetext .heading-6 {
-  font-family: Offside, Verdana, sans-serif;
-}
-
-.orangetext {
-  color: #ff7846;
-}
-
-.yellowtext {
-  color: #f5ff67;
-}
-*/ 

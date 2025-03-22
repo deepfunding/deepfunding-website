@@ -37,20 +37,32 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors extracted from the CSS
+
+        // Brand color palette
+        cream: {
+          DEFAULT: "#d9d5c5",
+          dark: "#c9c5b6",
+        },
+        green: {
+          DEFAULT: "#17301c",
+          medium: "#465058",
+          light: "#808782",
+        },
+        yellow: {
+          DEFAULT: "#f5ff67",
+          bright: "#f5ff67", // Alias for consistency
+        },
+        orange: {
+          DEFAULT: "#ff7846",
+        },
         "deep-green": "hsl(var(--deep-green))",
         "highlight-yellow": "hsl(var(--highlight-yellow))",
-        cream: "#d9d5c5",
-        "cream-dark": "#c9c5b6",
-        "green-dark": "#17301c",
-        "green-medium": "#465058",
-        "green-light": "#808782",
-        "yellow-bright": "#f5ff67",
-        orange: "#ff7846",
         "border-light": "#e4ebf3",
-        "text-light": "#666",
-        "text-dark": "#333",
-        "text-medium": "#3f4c51",
+        text: {
+          light: "#666",
+          DEFAULT: "#333",
+          medium: "#3f4c51",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
