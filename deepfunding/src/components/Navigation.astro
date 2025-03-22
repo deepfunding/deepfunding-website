@@ -1,0 +1,108 @@
+---
+import Hamburger from "./Hamburger.jsx";
+
+// Interface for navigation items
+interface NavItem {
+  href: string;
+  text: string;
+  isButton?: boolean;
+}
+
+// Navigation items data structure
+const navItems: NavItem[] = [
+  { href: "#challenge", text: "CHALLENGE" },
+  { href: "/resources", text: "RESOURCES" },
+];
+
+const rightNavItems: NavItem[] = [
+  { href: "/faq", text: "FAQ" },
+  {
+    href: "https://t.me/AgentAllocators/1",
+    text: "TELEGRAM",
+    isButton: true,
+  },
+];
+---
+
+<nav class="bg-green py-4 max-width-[940px] width-[940px]">
+  <div class="container mx-auto px-4 md:px-0">
+    <div class="flex items-center justify-between">
+      <!-- Left side navigation (desktop) -->
+      <div class="hidden md:block">
+        <ul class="flex space-x-6">
+          {
+            navItems.map((item) => (
+              <li>
+                <a href={item.href} class="nav-link">
+                  {item.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Center logo -->
+      <a href="/" class="mr-auto ml-0 md:mx-auto">
+        <img src="/logo.svg" alt="DeepFunding" class="w-[150px]" />
+      </a>
+
+      <!-- Right side navigation (desktop) -->
+      <div class="hidden md:flex items-center space-x-6">
+        {
+          rightNavItems.map((item) =>
+            item.isButton ? (
+              <a href={item.href} class="telegram-button">
+                {item.text}
+              </a>
+            ) : (
+              <a href={item.href} class="nav-link">
+                {item.text}
+              </a>
+            )
+          )
+        }
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <Hamburger
+          id="mobile-menu-button"
+          ariaControls="mobile-menu"
+          client:load
+        />
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden mt-4 md:hidden">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        {
+          [...navItems, ...rightNavItems].map((item, index) => (
+            <li>
+              {item.isButton ? (
+                <a href={item.href} class="telegram-button">
+                  {item.text}
+                </a>
+              ) : (
+                <a href={item.href} class="nav-link">
+                  {item.text}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-link {
+    @apply text-sm text-cream py-[5px] px-[10px] hover:text-white font-offside;
+  }
+
+  .telegram-button {
+    @apply bg-cream text-green-light px-[25px] py-3 uppercase text-xs !tracking-[2px] leading-[20px] font-offside hover:bg-[#32343a] hover:text-[#d9d5c5];
+  }
+</style>

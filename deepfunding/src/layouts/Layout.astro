@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
@@ -25,21 +26,7 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <div class="min-h-screen flex flex-col">
-      <header class="border-b">
-        <div class="container mx-auto px-4 py-4">
-          <nav class="flex justify-between items-center">
-            <a href="/" class="text-xl font-bold">DeepFunding</a>
-            <div class="flex gap-6">
-              <a href="/" class="hover:text-primary transition-colors">Home</a>
-              <a href="/faq" class="hover:text-primary transition-colors">FAQ</a
-              >
-              <a href="/resources" class="hover:text-primary transition-colors"
-                >Resources</a
-              >
-            </div>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main class="flex-1">
         <slot />
