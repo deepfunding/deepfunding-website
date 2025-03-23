@@ -570,4 +570,19 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1 {
+    @apply text-[32px] leading-[40px] tracking-[1.28px];
+  }
+  h2 {
+    @apply text-2xl mt-[20px] mb-[10px];
+  }
+  ul {
+    @apply list-disc pl-[40px];
+  }
+  li {
+    @apply text-lg leading-[2rem];
+  }
+  a {
+    @apply underline;
+  }
 } 
