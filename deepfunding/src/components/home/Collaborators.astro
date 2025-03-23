@@ -1,164 +1,91 @@
 ---
-// Collaborators.astro
+import CollaboratorCard from "@/components/shared/CollaboratorCard.astro";
+
+const collaborators = [
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca96a2996597eb82ee_icons.svg",
+    role: "Storyteller",
+    name: "Voicedeck",
+    url: "https://app.voicedeck.org/reports",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca4da1e030b59cdbe6_icons-2.svg",
+    role: "Wizard",
+    name: "Open Source Observer",
+    url: "https://www.opensource.observer/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca7c55e5e77bc37555_icons-4.svg",
+    role: "Referee",
+    name: "Pairwise",
+    url: "https://www.pairwise.vote/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f70046e7e4dbf80ddf8_Exclude.svg",
+    role: "Accelerator",
+    name: "Pollen Labs",
+    url: "https://pollenlabs.org/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48ccab987391620b5404b_icons-3.svg",
+    role: "Sprinkler",
+    name: "Drips",
+    url: "https://www.drips.network/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f702e4b26ec232483ac_Subtract.svg",
+    role: "Coach",
+    name: "Eval Science",
+    url: "https://www.eval.science/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f7090c5291b90b56ba5_Subtract-1.svg",
+    role: "Host",
+    name: "Pond",
+    url: "https://cryptopond.xyz/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca85e82fe1bc19d79a_icons-1.svg",
+    role: "Weaver",
+    name: "Allo Capital",
+    url: "https://allo.capital/",
+  },
+  {
+    imageUrl:
+      "https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca15da254e03c89ea3_icons-5.svg",
+    role: "Gardener",
+    name: "Ethereum Foundation",
+    url: "https://ethereum.foundation/",
+  },
+];
 ---
 
-<section class="collaborators">
-  <div class="container-4">
-    <h2 class="centered-heading-3 collaboratorsheading">COLLABORATORS</h2>
-    <div class="collaboratorgrid">
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6361-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca96a2996597eb82ee_icons.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Storyteller</p>
-        <h3 class="heading-4 collaboratortext">Voicedeck</h3>
-        <a
-          href="https://app.voicedeck.org/reports"
-          target="_blank"
-          class="link-block w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6368-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca4da1e030b59cdbe6_icons-2.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Wizard</p>
-        <h3 class="heading-4 collaboratortext">Open Source Observer</h3>
-        <a
-          href="https://www.opensource.observer/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd636f-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca7c55e5e77bc37555_icons-4.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Referee</p>
-        <h3 class="heading-4 collaboratortext">Pairwise</h3>
-        <a
-          href="https://www.pairwise.vote/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6376-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f70046e7e4dbf80ddf8_Exclude.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Accelerator</p>
-        <h3 class="heading-4 collaboratortext">Pollen Labs</h3>
-        <a
-          href="https://pollenlabs.org/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd637d-788f7c17"
-        class="collaboratorcard-copy"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48ccab987391620b5404b_icons-3.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Sprinkler</p>
-        <h3 class="heading-4 collaboratortext">Drips</h3>
-        <a
-          href="https://www.drips.network/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6384-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f702e4b26ec232483ac_Subtract.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Coach</p>
-        <h3 class="heading-4 collaboratortext">Eval&nbsp;Science</h3>
-        <a
-          href="https://www.eval.science/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd638b-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48f7090c5291b90b56ba5_Subtract-1.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Host</p>
-        <h3 class="heading-4 collaboratortext">Pond</h3>
-        <a
-          href="https://cryptopond.xyz/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6392-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca85e82fe1bc19d79a_icons-1.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Weaver</p>
-        <h3 class="heading-4 collaboratortext">Allo Capital</h3>
-        <a
-          href="https://allo.capital/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
-
-      <div
-        id="w-node-_89acfa2c-1bce-0af8-5137-2aaa4dbd6399-788f7c17"
-        class="collaboratorcard"
-      >
-        <img
-          src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a48cca15da254e03c89ea3_icons-5.svg"
-          loading="lazy"
-          alt=""
-        />
-        <p class="testimonial-text-two collaboratordescription">Gardener</p>
-        <h3 class="heading-4 collaboratortext">Ethereum Foundation</h3>
-        <a
-          href="https://ethereum.foundation/"
-          target="_blank"
-          class="link-block-2 w-inline-block"></a>
-      </div>
+<section class="py-20 bg-cream">
+  <div class="mx-auto px-4 md:px-0 max-w-[940px]">
+    <h2
+      class="font-stencil text-[64px] leading-[72px] text-left font-bold mb-12"
+    >
+      COLLABORATORS
+    </h2>
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+      {
+        collaborators.map((item) => (
+          <CollaboratorCard
+            imageUrl={item.imageUrl}
+            role={item.role}
+            name={item.name}
+            url={item.url}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
-
