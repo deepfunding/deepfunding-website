@@ -4,8 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Footer from "@/components/shared/Footer.astro";
 import Navigation from "@/components/shared/Navigation.astro";
+import CTA from "@/components/home/CTA.astro";
+import Footer from "@/components/shared/Footer.astro";
 ---
 
 <!doctype html>
@@ -31,6 +32,8 @@ import Navigation from "@/components/shared/Navigation.astro";
       <main class="flex-1">
         <slot />
       </main>
+
+      <CTA />
 
       <Footer />
     </div>
