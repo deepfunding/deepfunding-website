@@ -101,27 +101,6 @@
     @apply bg-gradient-to-b from-green to-cream;
   }
   
-  /* Comparison section styling */
-  .comparison {
-    @apply bg-cream py-16 px-8 flex flex-col items-center justify-center;
-  }
-  
-  .container-2 {
-    @apply w-full max-w-[940px] mx-auto mb-8;
-  }
-  
-  .rich-text-block {
-    @apply text-center font-offside text-lg;
-  }
-  
-  .paragraph {
-    @apply mb-0;
-  }
-  
-  .link-10, .link-11 {
-    @apply text-green font-bold hover:text-green-medium transition-colors underline;
-  }
-  
   /* Video section styling */
   .video-container {
     @apply w-full max-w-[940px] mx-auto;
