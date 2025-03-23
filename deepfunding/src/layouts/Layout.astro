@@ -24,7 +24,7 @@ import Navigation from "../components/Navigation.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-[#333]">
     <div class="min-h-screen flex flex-col">
       <Navigation />
 
@@ -35,8 +35,8 @@ import Navigation from "../components/Navigation.astro";
       <Footer />
     </div>
   </body>
-</html>
 
-<style is:global>
-  @import "../styles/global.css";
-</style>
+  <style is:global>
+    @import "../styles/global.css";
+  </style>
+</html>
