@@ -32,7 +32,7 @@ const sectionAQuestions = [
               alt="Table showing repos and their relative importance" 
               class="my-4 max-w-full"
             />
-            <p>The weights assigned by the winning model are deployed into a <a href="https://splits.org/" class="text-blue-600 hover:underline">Splits Contract</a> through which anyone can send money and have it distributed between repos.</p>`
+            <p>The weights assigned by the winning model are deployed into a <a href="https://splits.org/">Splits Contract</a> through which anyone can send money and have it distributed between repos.</p>`
   },
   {
     id: "a4",
@@ -42,7 +42,7 @@ const sectionAQuestions = [
   {
     id: "a5",
     question: "This sounds interesting, how can I integrate deep funding in my allocation mechanism?",
-    answer: `There are 2 ways to do so, via deep funding or predictive funding:<br/><br/>In predictive funding, submitted Machine Learning (ML) models need to guess the amount that will be received by each project in a funding round <strong><em>before</em></strong> it even begins. This will show us what models are most likely to give an allocation similar to your funding mechanism. See some example submissions <a href="https://research.allo.capital/t/submission-of-entries-to-the-deep-funding-mini-contest/22" class="text-blue-600 hover:underline">here</a>.<br/><br/>In deep funding, submitted ML models give weights to the edges of a dependency graph. A jury rates a subset of edges to indirectly select winning models that then allocate rewards across the entire graph. See the competition to get weights between Ethereum core repos <a href="https://cryptopond.xyz/modelfactory/detail/2564617" class="text-blue-600 hover:underline">here</a>.`
+    answer: `There are 2 ways to do so, via deep funding or predictive funding:<br/><br/>In predictive funding, submitted Machine Learning (ML) models need to guess the amount that will be received by each project in a funding round <strong><em>before</em></strong> it even begins. This will show us what models are most likely to give an allocation similar to your funding mechanism. See some example submissions <a href="https://research.allo.capital/t/submission-of-entries-to-the-deep-funding-mini-contest/22">here</a>.<br/><br/>In deep funding, submitted ML models give weights to the edges of a dependency graph. A jury rates a subset of edges to indirectly select winning models that then allocate rewards across the entire graph. See the competition to get weights between Ethereum core repos <a href="https://cryptopond.xyz/modelfactory/detail/2564617">here</a>.`
   },
   {
     id: "a6",
@@ -57,14 +57,14 @@ const sectionBQuestions = [
     question: "Where is the list of repos that I need to give weights to? How did you choose them?",
     answer: `<p>The list of seed nodes was taken from:</p>
             <ul class="list-disc pl-6 my-2">
-              <li><a href="http://clientdiversity.org" class="text-blue-600 hover:underline">clientdiversity.org</a> for the execution and consensus clients of Ethereum</li>
+              <li><a href="http://clientdiversity.org">clientdiversity.org</a> for the execution and consensus clients of Ethereum</li>
               <li>The 5000 child nodes comprise dependencies of the 34 seed nodes.</li>
             </ul>`
   },
   {
     id: "b2",
     question: "How are you selecting the jurors rating the seed nodes, against which you will test the weights given by models? Will their evaluations be made public?",
-    answer: "The jury is constructed by either invitation or nomination. Select jurors are invited based on their application in the forum or outreach by our team for their special expertise. Other jurors are nominated by the existing jury. You can see the entire juror list and apply or nominate someone to be a juror <a href=\"https://research.allo.capital/t/join-the-deep-funding-jury/99\" class=\"text-blue-600 hover:underline\">here</a><br/><br/>All evaluations follow Chatham House rules. Ratings, comments, juror names and who they nominated are public but who made a specific rating will not be public."
+    answer: "The jury is constructed by either invitation or nomination. Select jurors are invited based on their application in the forum or outreach by our team for their special expertise. Other jurors are nominated by the existing jury. You can see the entire juror list and apply or nominate someone to be a juror <a href=\"https://research.allo.capital/t/join-the-deep-funding-jury/99\">here</a><br/><br/>All evaluations follow Chatham House rules. Ratings, comments, juror names and who they nominated are public but who made a specific rating will not be public."
   },
   {
     id: "b3",
@@ -74,7 +74,7 @@ const sectionBQuestions = [
   {
     id: "b4",
     question: "Where can I submit my model for the deep funding contest?",
-    answer: "Pond is the host for the deep funding competition giving weights to ethereum core repos. You can see the leaderboard and make submissions <a href=\"https://cryptopond.xyz/modelfactory/detail/2564617\" class=\"text-blue-600 hover:underline\">here</a>. This is also where we share the training data from the jurors for you to train a model."
+    answer: "Pond is the host for the deep funding competition giving weights to ethereum core repos. You can see the leaderboard and make submissions <a href=\"https://cryptopond.xyz/modelfactory/detail/2564617\">here</a>. This is also where we share the training data from the jurors for you to train a model."
   },
   {
     id: "b5",
@@ -94,7 +94,7 @@ const sectionBQuestions = [
   {
     id: "b8",
     question: "How are you scoring submitted models?",
-    answer: "There are 2 leaderboards, the first of which is indicative while the second is used to award prizes<br/><br/>a. <strong>Raw cost function value</strong>: Ranks models by total cost (lower is better). Scores calculated according to a cost function based on how far away your model is from the jury samples, on those questions where jurors have provided samples. <br/><br/>\"Under the hood\", each sample is converted into a \"logit\" form, for example, if a juror says that A contributed 4x more than B, then the sample will be in the form (A, B, -1.386), where 1.386 = ln(4), negative because A is higher.<br/><br/>If your model assigns A = 0.2 and B = 0.02, then those values are themselves converted into logits (here, -1.609 and -3.912), and the cost function term is (your_B - your_A - model_diff)^2 = (-3.912 + 1.609 + 1.386) ** 2 = 0.840.<br/><br/>If your model assigns A = 0.2 and B = 0.05, then you get (-2.995 + 1.609 + 1.386)^2 = 0: a perfect score, reflecting that your model exactly mirrors the juror's opinion that A contributed 4x more than B.<br/><br/>b. <strong>Contribution to composite model</strong>: the second leaderboard reflects how much your model is influencing the ensemble of models that determine the end allocation to projects. Most submissions will likely score 0 as only select models will form the composite model. This approach rewards originality in submissions rather than simply copying the leader. To give an example, if the second-best model is a copy of the first-best model but slightly adjusted to make it worse, it would score #2 in raw cost function value but its weight here may end up being zero. <br/><br/>You can see an example of the scoring script developed by Vitalik Buterin <a href=\"https://github.com/deepfunding/scoring/blob/main/example2.py\" class=\"text-blue-600 hover:underline\">here</a>"
+    answer: "There are 2 leaderboards, the first of which is indicative while the second is used to award prizes<br/><br/>a. <strong>Raw cost function value</strong>: Ranks models by total cost (lower is better). Scores calculated according to a cost function based on how far away your model is from the jury samples, on those questions where jurors have provided samples. <br/><br/>\"Under the hood\", each sample is converted into a \"logit\" form, for example, if a juror says that A contributed 4x more than B, then the sample will be in the form (A, B, -1.386), where 1.386 = ln(4), negative because A is higher.<br/><br/>If your model assigns A = 0.2 and B = 0.02, then those values are themselves converted into logits (here, -1.609 and -3.912), and the cost function term is (your_B - your_A - model_diff)^2 = (-3.912 + 1.609 + 1.386) ** 2 = 0.840.<br/><br/>If your model assigns A = 0.2 and B = 0.05, then you get (-2.995 + 1.609 + 1.386)^2 = 0: a perfect score, reflecting that your model exactly mirrors the juror's opinion that A contributed 4x more than B.<br/><br/>b. <strong>Contribution to composite model</strong>: the second leaderboard reflects how much your model is influencing the ensemble of models that determine the end allocation to projects. Most submissions will likely score 0 as only select models will form the composite model. This approach rewards originality in submissions rather than simply copying the leader. To give an example, if the second-best model is a copy of the first-best model but slightly adjusted to make it worse, it would score #2 in raw cost function value but its weight here may end up being zero. <br/><br/>You can see an example of the scoring script developed by Vitalik Buterin <a href=\"https://github.com/deepfunding/scoring/blob/main/example2.py\">here</a>"
   }
 ];
 
@@ -136,10 +136,10 @@ const FAQAccordion = () => {
               value={item.id}
               className={index % 2 === 0 ? "bg-[#17301c]" : ""}
             >
-              <AccordionTrigger>
+              <AccordionTrigger className='mb-5'>
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className='p-6 m-0 text-lg'>
                 <HTMLContent html={item.answer} />
               </AccordionContent>
             </AccordionItem>
