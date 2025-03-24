@@ -18,7 +18,7 @@ const Button = ({
   ...rest 
 }) => {
   const baseStyles = 
-    "inline-block uppercase text-xs tracking-[2px] leading-[20px] font-offside font-bold transition-all duration-200";
+    "inline-block uppercase text-xs tracking-[2px] leading-[20px] font-offside font-bold transition-all duration-200 no-underline";
 
   const variantStyles = {
     primary: 

@@ -34,7 +34,7 @@ const rightNavItems: NavItem[] = [
           {
             navItems.map((item) => (
               <li>
-                <a href={item.href} class="nav-link">
+                <a href={item.href} class="nav-link no-underline">
                   {item.text}
                 </a>
               </li>
@@ -57,7 +57,7 @@ const rightNavItems: NavItem[] = [
                 {item.text}
               </Button>
             ) : (
-              <a href={item.href} class="nav-link">
+              <a href={item.href} class="nav-link no-underline">
                 {item.text}
               </a>
             )

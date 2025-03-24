@@ -98,53 +98,11 @@
     @apply bg-gradient-to-b from-[#454f57] to-green relative py-20 px-8;
   }
   
-  .section-2 {
-    @apply max-w-full md:max-w-[50%] pr-0 md:pr-5 mb-10 md:mb-0;
-  }
-  
-  .challenge-centered-heading {
-    @apply font-stencil text-cream text-left text-4xl md:text-[4rem] font-bold mb-4 leading-[4rem] mt-0;
-  }
-  
-  .rich-text-block-2 {
-    @apply text-cream font-offside text-2xl leading-8 max-w-[90%] pl-0;
-  }
-  
-  .heading-6 {
-    @apply text-xl leading-[30px];
-  }
-  
-  .paragraph-3 {
-    @apply mt-4 text-[1.7rem] leading-[1.7rem];
-  }
-  
   .challengegrid {
     @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-16;
   }
   
-  .pricing-card-three {
-    @apply bg-cream border-2 border-yellow flex flex-col justify-start items-start p-5 font-public;
-  }
   
-  .challenge-header {
-    @apply font-stencil text-xl text-green font-bold mb-3;
-  }
-  
-  .challenge-text {
-    @apply font-offside text-base leading-6 mb-2.5;
-  }
-  
-  .submissionsheadings {
-    @apply font-stencil text-yellow text-2xl md:text-3xl text-center mt-10 mb-4;
-  }
-  
-  .text-block-3 {
-    @apply font-offside text-cream text-center;
-  }
-  
-  .link-20 {
-    @apply text-yellow underline hover:text-yellow-bright transition-colors;
-  }
 }
 
 /* Custom utility classes */
@@ -198,13 +156,6 @@
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.section-2 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .centered-heading {
