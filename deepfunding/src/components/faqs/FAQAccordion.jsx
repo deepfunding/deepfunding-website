@@ -27,7 +27,7 @@ const sectionAQuestions = [
     question: "I'm still confused, what is the end output of a Deep Funding challenge?",
     answer: `<p>Very simply, it is a table showing different repos & their relative importance to one another. You can see an example below, based on Github stars.</p>
             <img 
-              src="https://cdn.prod.website-files.com/679d72e9350c00c3788f7c0c/67a9f5e041af7a1fceeb61b2_Screenshot%202025-01-21%20at%204.00.59%20PM.png" 
+              src="/images/faqs/repos-importance-table.png" 
               loading="lazy" 
               alt="Table showing repos and their relative importance" 
               class="my-4 max-w-full"
