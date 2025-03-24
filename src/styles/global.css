@@ -24,7 +24,7 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    
+
     /* Custom Colors */
     --deep-green: 160 100% 15%;
     --highlight-yellow: 50 100% 60%;
@@ -78,36 +78,34 @@
   p {
     @apply mt-0;
   }
-} 
+}
 
 @layer components {
   /* Common components styling */
   .section-container {
     @apply w-full max-w-[940px] mx-auto;
   }
-  
+
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-1;
   }
-  
+
   .gradient-green {
     @apply bg-gradient-to-b from-green-medium to-green;
   }
-  
+
   .gradient-cream {
     @apply bg-gradient-to-b from-green to-cream;
   }
-  
+
   /* Challenge section styling */
   .challenge {
     @apply bg-gradient-to-b from-[#454f57] to-green relative py-20 px-8;
   }
-  
+
   .challengegrid {
     @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-16;
   }
-  
-  
 }
 
 /* Custom utility classes */
@@ -125,7 +123,6 @@
 }
 
 .hero-container {
-  border-bottom: 1px solid #e4ebf3;
   min-height: 80vh;
   padding: 80px 30px;
   position: relative;
@@ -133,7 +130,7 @@
 
 .h1-hero {
   color: #d9d5c5;
-  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
+  font-family: "Big Shoulders Stencil Display", Arial, sans-serif;
   font-size: 4rem;
   font-weight: 700;
   line-height: 4rem;
@@ -144,15 +141,19 @@
 }
 
 .gradient-bg::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   pointer-events: none;
-} 
+}
 
 /* How Does It Work Section Styles */
 
@@ -168,7 +169,7 @@
   text-align: left;
   margin-top: 0;
   margin-bottom: 16px;
-  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
+  font-family: "Big Shoulders Stencil Display", Arial, sans-serif;
   font-size: 4rem;
   font-weight: 700;
   line-height: 4rem;
@@ -176,14 +177,15 @@
 
 /* Collaborators Section Styles */
 @media screen and (max-width: 991px) {
-  .challengegrid, .jurygrid {
+  .challengegrid,
+  .jurygrid {
     grid-column-gap: 30px;
   }
 }
 
 .heading-4 {
   color: #17301c;
-  font-family: 'Big Shoulders Stencil Display', Arial, sans-serif;
+  font-family: "Big Shoulders Stencil Display", Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
@@ -194,10 +196,10 @@
 
 /* Rewards Section Styles */
 .testimonial-gradient {
-    background-image: linear-gradient(#465058, #17301c);
-  }
-  
-  @layer base {
+  background-image: linear-gradient(#465058, #17301c);
+}
+
+@layer base {
   * {
     @apply border-border;
   }
@@ -219,4 +221,4 @@
   a {
     @apply underline;
   }
-} 
+}
