@@ -7,11 +7,12 @@ interface NavItem {
   href: string;
   text: string;
   isButton?: boolean;
+  scrollTo?: boolean;
 }
 
 // Navigation items data structure
 const navItems: NavItem[] = [
-  { href: "#challenge", text: "CHALLENGE" },
+  { href: "/#challenge", text: "CHALLENGE", scrollTo: true },
   { href: "/resources", text: "RESOURCES" },
 ];
 
@@ -23,6 +24,10 @@ const rightNavItems: NavItem[] = [
     isButton: true,
   },
 ];
+
+// Get the current path to check if we're on the homepage
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/" || currentPath === "";
 ---
 
 <nav class="bg-green py-4 max-width-[940px] width-[940px]">
@@ -34,9 +39,19 @@ const rightNavItems: NavItem[] = [
           {
             navItems.map((item) => (
               <li>
-                <a href={item.href} class="nav-link no-underline">
-                  {item.text}
-                </a>
+                {item.scrollTo && isHomePage ? (
+                  <a
+                    href={item.href}
+                    class="nav-link no-underline scroll-link"
+                    data-scroll={item.href.replace(/^\//, "")}
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <a href={item.href} class="nav-link no-underline">
+                    {item.text}
+                  </a>
+                )}
               </li>
             ))
           }
@@ -49,19 +64,21 @@ const rightNavItems: NavItem[] = [
       </a>
 
       <!-- Right side navigation (desktop) -->
-      <div class="hidden md:flex items-center space-x-6">
+      <div class="hidden md:flex items-center">
         {
-          rightNavItems.map((item) =>
-            item.isButton ? (
-              <Button href={item.href} client:load>
-                {item.text}
-              </Button>
-            ) : (
-              <a href={item.href} class="nav-link no-underline">
-                {item.text}
-              </a>
-            )
-          )
+          rightNavItems.map((item, index) => (
+            <div class={index === 0 ? "mr-8" : ""}>
+              {item.isButton ? (
+                <Button href={item.href} client:load>
+                  {item.text}
+                </Button>
+              ) : (
+                <a href={item.href} class="nav-link no-underline">
+                  {item.text}
+                </a>
+              )}
+            </div>
+          ))
         }
       </div>
 
@@ -79,12 +96,20 @@ const rightNavItems: NavItem[] = [
     <div id="mobile-menu" class="hidden mt-4 md:hidden">
       <ul class="flex flex-col items-center space-y-4 py-4">
         {
-          [...navItems, ...rightNavItems].map((item, index) => (
+          [...navItems, ...rightNavItems].map((item) => (
             <li>
               {item.isButton ? (
                 <Button href={item.href} client:load>
                   {item.text}
                 </Button>
+              ) : item.scrollTo && isHomePage ? (
+                <a
+                  href={item.href}
+                  class="nav-link scroll-link"
+                  data-scroll={item.href.replace(/^\//, "")}
+                >
+                  {item.text}
+                </a>
               ) : (
                 <a href={item.href} class="nav-link">
                   {item.text}
@@ -99,7 +124,36 @@ const rightNavItems: NavItem[] = [
 </nav>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   .nav-link {
     @apply text-sm text-cream py-[5px] px-[10px] hover:text-white font-offside;
   }
 </style>
+
+<script>
+  // Handle smooth scrolling for navigation links
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollLinks = document.querySelectorAll(".scroll-link");
+
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const targetId = link.getAttribute("data-scroll") || "";
+        if (targetId) {
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          } else {
+            // If element not found on current page, navigate to homepage with anchor
+            window.location.href = link.getAttribute("href") || "/";
+          }
+        }
+      });
+    });
+  });
+</script>
